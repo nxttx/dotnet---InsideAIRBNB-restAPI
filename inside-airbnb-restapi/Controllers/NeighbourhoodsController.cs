@@ -1,17 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using WebApplication1.Models;
+using WebApplication1.Models.DTO;
 
 namespace WebApplication1.Controllers
 {
-    [ApiController]
     [Route("neighbourhoods")]
+    [ApiController]
     public class NeighbourhoodsController : ControllerBase
     {
-        [HttpGet]
-        public String GetNeighbourhoods()
-        {
-            return
-                "[\"Bijlmer-Centrum\",\"Bijlmer-Oost\",\"Bos en Lommer\",\"Buitenveldert - Zuidas\",\"Centrum-Oost\",\"Centrum-West\",\"De Aker - Nieuw Sloten\",\"De Baarsjes - Oud-West\",\"De Pijp - Rivierenbuurt\",\"Gaasperdam - Driemond\",\"Geuzenveld - Slotermeer\",\"IJburg - Zeeburgereiland\",\"Noord-Oost\",\"Noord-West\",\"Oostelijk Havengebied - Indische Buurt\",\"Osdorp\",\"Oud-Noord\",\"Oud-Oost\",\"Slotervaart\",\"Watergraafsmeer\",\"Westerpark\",\"Zuid\"]";
+        private readonly AIRBNBContext _context;
 
+        public NeighbourhoodsController(AIRBNBContext context)
+        {
+            _context = context;
         }
+
+        // GET: Neighbourhoods
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<String>>> GetNeighbourhoods()
+        {
+            if (_context.Neighbourhoods == null)
+            {
+                return NotFound();
+            }
+
+            return await _context.Neighbourhoods.Select(x=>x.Neighbourhood1).ToListAsync();
+        }
+        
+        
     }
 }
