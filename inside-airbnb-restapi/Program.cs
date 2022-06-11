@@ -28,6 +28,26 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+//Middleware voor response header config.
+// kan ook via web.config
+//
+app.Use(async (context, next)=>
+{
+    context.Response.Headers.Add("X-Frame-Options", "Deny");
+
+    //CSP response header configuratie tegen XSS en clickjacking
+    //https://content-security-policy.com 
+    // starter polecy pakken en die later aanpassen.
+    context.Response.Headers.Add("Content-Security-Policy", "default-src 'none'; script-src 'none'; connect-src 'self'; img-src 'self'; style-src 'self';base-uri 'self';form-action 'self'; frame-ancestors: 'none';");
+
+
+
+    context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
+    await next();
+});
+
+
+
 app.MapControllers();
 
 app.Run();
