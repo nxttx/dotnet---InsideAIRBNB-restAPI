@@ -11,7 +11,7 @@ builder.Services.AddControllers();
 
 String applicationConnectionString =
     // "Server=localhost;Database=AIRBNB;User Id=sa;password=MSSQL_server;Trusted_Connection=False";
-    "Server=63128insideairbnb.database.windows.net;Database=AIRBNB;User Id=airbnbAdmin;password=InsideAirbnb1;Trusted_Connection=False";
+    "Server=63128insideairbnb.database.windows.net;Database=AIRBNB;User Id=airbnbAdmin;password=Insideairbnb!;Trusted_Connection=False";
 
 builder.Services.AddDbContext<AIRBNBContext>(options =>
     options.UseSqlServer(applicationConnectionString));
