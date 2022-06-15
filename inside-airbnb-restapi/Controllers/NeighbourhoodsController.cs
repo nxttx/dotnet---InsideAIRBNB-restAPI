@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Models;
 using WebApplication1.Models.DTO;
+using WebApplication1.Repository;
 
 namespace WebApplication1.Controllers
 {
@@ -14,23 +15,19 @@ namespace WebApplication1.Controllers
     [ApiController]
     public class NeighbourhoodsController : ControllerBase
     {
-        private readonly AIRBNBContext _context;
+        private readonly INeighbourhoodsRepository _neighbourhoodsRepository;
 
-        public NeighbourhoodsController(AIRBNBContext context)
+        public NeighbourhoodsController(INeighbourhoodsRepository neighbourhoodsRepository)
         {
-            _context = context;
+            _neighbourhoodsRepository = neighbourhoodsRepository;
         }
 
         // GET: Neighbourhoods
         [HttpGet]
         public async Task<ActionResult<IEnumerable<String>>> GetNeighbourhoods()
         {
-            if (_context.Neighbourhoods == null)
-            {
-                return NotFound();
-            }
 
-            return await _context.Neighbourhoods.Select(x=>x.Neighbourhood1).ToListAsync();
+            return await _neighbourhoodsRepository.GetAllNeighbourhoods();
         }
         
         

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Models;
+using WebApplication1.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,12 @@ builder.Services.AddDbContext<AIRBNBContext>(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+builder.Services.AddScoped<INeighbourhoodsRepository, NeighbourhoodsRepository>();
+builder.Services.AddScoped<IListingsRepository, ListingRepository>();
+
+
 
 var app = builder.Build();
 
@@ -45,8 +52,6 @@ app.Use(async (context, next)=>
     context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
     await next();
 });
-
-
 
 app.MapControllers();
 

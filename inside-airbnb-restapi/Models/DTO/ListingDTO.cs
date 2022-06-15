@@ -20,7 +20,7 @@ public class ListingDTO
     public double? review_scores_rating{ get; }
     
     
-    public ListingDTO(long id, string name, string thumbnailUrl, string hostIsSuperhost, string neighbourhood, double latitude, double longitude, string propertyType, string roomType, string accommodates, string bathrooms, string bedrooms, string beds, string price, string numberOfReviews, double reviewScoresRating)
+    public ListingDTO(long id, string name, string thumbnailUrl, string hostIsSuperhost, string neighbourhood, double? latitude, double? longitude, string propertyType, string roomType, string accommodates, string bathrooms, string bedrooms, string beds, string price, string numberOfReviews, double? reviewScoresRating)
     {
         this.id = id;
         this.name = name;

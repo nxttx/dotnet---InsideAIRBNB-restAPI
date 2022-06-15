@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Models;
 using WebApplication1.Models.DTO;
+using WebApplication1.Repository;
 
 namespace WebApplication1.Controllers
 {
@@ -14,65 +15,31 @@ namespace WebApplication1.Controllers
     [ApiController]
     public class ListingsController : ControllerBase
     {
-        private readonly AIRBNBContext _context;
+        private readonly IListingsRepository _listingsRepository;
 
-        public ListingsController(AIRBNBContext context)
+        public ListingsController(IListingsRepository listingsRepository)
         {
-            _context = context;
+            _listingsRepository = listingsRepository;
         }
 
         // GET: Listings
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ListingDTO>>> getListings()
+        public async Task<ActionResult<IEnumerable<ListingDTO>>> GetListings()
         {
-            if (_context.Listings == null)
-            {
-                return NotFound();
-            }
 
-            return await _context.Listings.Take(20).Select(x=>new ListingDTO(x)).ToListAsync();
+            var listings = await _listingsRepository.getListings();
+            return Ok(listings);
         }
         
-        
-        // GET: Listings
-        // [HttpGet]
-        // public async Task<ActionResult<IEnumerable<Listing>>> GetListings()
-        // {
-        //   if (_context.Listings == null)
-        //   {
-        //       return NotFound();
-        //   }
-        //     return await _context.Listings.ToListAsync();
-        // }
-
-        // GET: Listings/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Listing>> GetListing(int id)
-        {
-          if (_context.Listings == null)
-          {
-              return NotFound();
-          }
-            var listing = await _context.Listings.FindAsync(id);
-
-            if (listing == null)
-            {
-                return NotFound();
-            }
-
-            return listing;
-        }
 
         // GET: Listings
         [HttpGet("geodata")]
         public async Task<ActionResult<IEnumerable<ShortListing>>> GetListingGeodata()
         {
-            if (_context.Listings == null)
-            {
-                return NotFound();
-            }
+            
+            var listings = await _listingsRepository.GetListingGeodata();
+            return Ok(listings);
 
-            return await _context.Listings.Select(x=>new ShortListing(x.Latitude, x.Longitude, x.Price, x.ListingUrl, x.NeighbourhoodCleansed, x.ReviewScoresRating)).ToListAsync();
         }
         
     }
