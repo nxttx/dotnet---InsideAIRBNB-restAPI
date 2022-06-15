@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using WebApplication1.Models;
 using WebApplication1.Models.DTO;
 using WebApplication1.Repository;
+using WebApplication1.Cache;
 
 namespace WebApplication1.Controllers
 {
@@ -24,23 +25,22 @@ namespace WebApplication1.Controllers
 
         // GET: Listings
         [HttpGet]
+        [Cached(600)]
         public async Task<ActionResult<IEnumerable<ListingDTO>>> GetListings()
         {
 
-            var listings = await _listingsRepository.getListings();
-            return Ok(listings);
+            return await _listingsRepository.getListings();
         }
         
 
         // GET: Listings
         [HttpGet("geodata")]
+        [Cached(600)]
         public async Task<ActionResult<IEnumerable<ShortListing>>> GetListingGeodata()
         {
             
-            var listings = await _listingsRepository.GetListingGeodata();
-            return Ok(listings);
+            return await _listingsRepository.GetListingGeodata();
 
         }
-        
     }
 }

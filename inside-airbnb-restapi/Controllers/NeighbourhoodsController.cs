@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using WebApplication1.Models;
 using WebApplication1.Models.DTO;
 using WebApplication1.Repository;
+using WebApplication1.Cache;
 
 namespace WebApplication1.Controllers
 {
@@ -24,6 +25,7 @@ namespace WebApplication1.Controllers
 
         // GET: Neighbourhoods
         [HttpGet]
+        [Cached(600)]
         public async Task<ActionResult<IEnumerable<String>>> GetNeighbourhoods()
         {
 
