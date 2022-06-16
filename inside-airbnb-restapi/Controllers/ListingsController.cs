@@ -28,8 +28,7 @@ namespace WebApplication1.Controllers
         [Cached(600)]
         public async Task<ActionResult<IEnumerable<ListingDTO>>> GetListings()
         {
-
-            return await _listingsRepository.getListings();
+            return Ok(await _listingsRepository.getListings());
         }
         
 
@@ -39,7 +38,7 @@ namespace WebApplication1.Controllers
         public async Task<ActionResult<IEnumerable<ShortListing>>> GetListingGeodata()
         {
             
-            return await _listingsRepository.GetListingGeodata();
+            return Ok(await _listingsRepository.GetListingGeodata());
 
         }
     }

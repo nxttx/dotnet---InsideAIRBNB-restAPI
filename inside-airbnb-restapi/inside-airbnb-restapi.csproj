@@ -2,11 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
+    <!-- <OutputType>Library</OutputType> -->
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>c95a52ea-48f7-4022-b711-25410a20ade0</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <RootNamespace>WebApplication1</RootNamespace>
+    <RootNamespace>inside-airbnb-restapi</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

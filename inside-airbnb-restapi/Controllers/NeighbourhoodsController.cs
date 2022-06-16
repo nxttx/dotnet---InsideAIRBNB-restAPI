@@ -29,7 +29,7 @@ namespace WebApplication1.Controllers
         public async Task<ActionResult<IEnumerable<String>>> GetNeighbourhoods()
         {
 
-            return await _neighbourhoodsRepository.GetAllNeighbourhoods();
+            return Ok(await _neighbourhoodsRepository.GetAllNeighbourhoods());
         }
         
         

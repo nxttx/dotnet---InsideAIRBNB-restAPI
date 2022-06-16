@@ -63,7 +63,7 @@ app.Use(async (context, next)=>
     //CSP response header configuratie tegen XSS en clickjacking
     //https://content-security-policy.com 
     // starter polecy pakken en die later aanpassen.
-    // context.Response.Headers.Add("Content-Security-Policy", "default-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://api.mapbox.com;base-uri 'self';form-action 'self'; frame-ancestors: 'none';");
+    context.Response.Headers.Add("Content-Security-Policy", "default-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://api.mapbox.com;base-uri 'self';form-action 'self'; frame-ancestors: 'none';");
     context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
     await next();
 });
