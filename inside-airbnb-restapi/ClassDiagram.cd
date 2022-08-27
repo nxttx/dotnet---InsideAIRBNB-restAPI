@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WebApplication1.Cache.CachedAttribute">
+    <Position X="10" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAgAAAAAAAAgA=</HashCode>
+      <FileName>Cache\CachedAttribute.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WebApplication1.Cache.ResponseCacheService">
+    <Position X="12.75" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AACAQAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Cache\ResponseCacheService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WebApplication1.Controllers.ListingsController">
+    <Position X="10" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAQA=</HashCode>
+      <FileName>Controllers\ListingsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApplication1.Controllers.NeighbourhoodsController">
+    <Position X="12.75" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\NeighbourhoodsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApplication1.Models.AIRBNBContext">
+    <Position X="0.5" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>IQAAAEAAAQAQAAAAAAAAAAAAEAAAAAAVAAAQAAAAAAA=</HashCode>
+      <FileName>Models\AIRBNBContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApplication1.Models.Calendar">
+    <Position X="3.25" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAQAABAAAAAAAAABAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Calendar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApplication1.Models.Listing">
+    <Position X="5.5" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gLADJAEiCUC6nAIWDCUIAA4QAIgICArAJEQCALFCDAE=</HashCode>
+      <FileName>Models\Listing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApplication1.Models.Neighbourhood">
+    <Position X="3.25" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Models\Neighbourhood.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApplication1.Models.Review">
+    <Position X="3.25" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAKAAAAABAABAAAAAAAAAAAAAAAAAABAAAEAAAAIAA=</HashCode>
+      <FileName>Models\Review.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApplication1.Models.SummaryListing">
+    <Position X="3.25" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gCACAAAAAUAAAAAAAAEIAAUAAAAAAAAAJAAAAIECAAA=</HashCode>
+      <FileName>Models\SummaryListing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApplication1.Models.SummaryReview">
+    <Position X="3.25" Y="11" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SummaryReview.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApplication1.Models.DTO.ListingDTO">
+    <Position X="7.75" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAABUAAAAAQAAAAABBAAEEAACAAEAAAAAAIAEIAACgA=</HashCode>
+      <FileName>Models\DTO\ListingDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApplication1.Models.DTO.ShortListing">
+    <Position X="10" Y="5.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAUAAAAAEBAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DTO\ShortListing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApplication1.Repository.ListingRepository">
+    <Position X="7.75" Y="7" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Repository\ListingsRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WebApplication1.Repository.NeighbourhoodsRepository">
+    <Position X="10" Y="8" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\NeighbourhoodsRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="WebApplication1.Cache.IResponseCacheService">
+    <Position X="7.75" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AACAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cache\IResponseCacheService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WebApplication1.Repository.IListingsRepository">
+    <Position X="12.75" Y="5.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Repository\IListingsRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WebApplication1.Repository.INeighbourhoodsRepository">
+    <Position X="12.75" Y="6.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\INeighbourhoodsRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
